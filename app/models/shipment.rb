@@ -1,1 +1,2 @@
-has_many :batches, dependent: :destroy
+class Shipment < ApplicationRecord
+end
