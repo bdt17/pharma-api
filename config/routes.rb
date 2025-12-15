@@ -1,7 +1,3 @@
 Rails.application.routes.draw do
-  namespace :api do
-    namespace :v1 do
-      resources :batches, only: [:index]
-    end
-  end
+  get "/api/v1/batches", to: "batches#index"
 end
