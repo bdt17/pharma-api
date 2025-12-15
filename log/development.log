@@ -117,3 +117,6 @@ FOREIGN KEY ("shipment_id")
   [1m[35mSQL (0.1ms)[0m  [1m[35mSET search_path TO "$user", public /*application='PharmaApi'*/[0m
   [1m[35mSQL (0.1ms)[0m  [1m[35mSET search_path TO public /*application='PharmaApi'*/[0m
   [1m[35mSQL (0.1ms)[0m  [1m[35mSET search_path TO "$user", public /*application='PharmaApi'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN /*application='PharmaApi'*/[0m
+  [1m[36mShipment Create (1.6ms)[0m  [1m[32mINSERT INTO "shipments" ("tracking_number", "status", "driver_name", "current_temp", "created_at", "updated_at") VALUES ('SHIP001', NULL, NULL, NULL, '2025-12-15 05:54:52.682253', '2025-12-15 05:54:52.682253') RETURNING "id" /*application='PharmaApi'*/[0m
+  [1m[36mTRANSACTION (56.2ms)[0m  [1m[35mCOMMIT /*application='PharmaApi'*/[0m
