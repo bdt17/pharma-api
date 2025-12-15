@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  imei: MyString
+  name: MyString
+  last_ping: 2025-12-14 17:26:38
+  battery: 1.5
+
+two:
+  imei: MyString
+  name: MyString
+  last_ping: 2025-12-14 17:26:38
+  battery: 1.5
