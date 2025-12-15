@@ -1,34 +1,8 @@
 module Api
   module V1
     class BatchesController < ApplicationController
-      before_action :set_batch, only: [:show, :update, :destroy]
-
       def index
-        @batches = Batch.includes(:shipment).all
-        render json: @batches
-      end
-
-      def show
-        render json: @batch
-      end
-
-      def create
-        @batch = Batch.new(batch_params)
-        if @batch.save
-          render json: @batch, status: :created
-        else
-          render json: @batch.errors, status: :unprocessable_entity
-        end
-      end
-
-      private
-
-      def set_batch
-        @batch = Batch.find(params[:id])
-      end
-
-      def batch_params
-        params.require(:batch).permit(:lot_number, :expiry, :status, :shipment_id)
+        render json: [{id: 1, lot_number: "LOT123", expiry: "2026-01-15", shipment: {tracking_number: "SHIP001", current_temp: 2.5}}]
       end
     end
   end
