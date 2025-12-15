@@ -7,3 +7,4 @@ module Api
     end
   end
 end
+ActionCable.server.broadcast("gps_#{batch.id}", {lat: 37.7749, lng: -122.4194, temp: 4.2})

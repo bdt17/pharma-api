@@ -179,3 +179,4 @@ puma (7.1.0) lib/puma/request.rb:100:in `handle_request'
 puma (7.1.0) lib/puma/server.rb:503:in `process_client'
 puma (7.1.0) lib/puma/server.rb:262:in `block in run'
 puma (7.1.0) lib/puma/thread_pool.rb:182:in `block in spawn_thread'
+Generating image variants require the image_processing gem. Please add `gem "image_processing", "~> 1.2"` to your Gemfile or set `config.active_storage.variant_processor = :disabled`.

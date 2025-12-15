@@ -10,3 +10,4 @@ gem "bootsnap", require: false
 group :development, :test do
   gem "debug", platforms: :mri
 end
+gem "redis", "~> 5.0"
