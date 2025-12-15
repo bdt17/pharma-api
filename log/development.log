@@ -180,3 +180,11 @@ puma (7.1.0) lib/puma/server.rb:503:in `process_client'
 puma (7.1.0) lib/puma/server.rb:262:in `block in run'
 puma (7.1.0) lib/puma/thread_pool.rb:182:in `block in spawn_thread'
 Generating image variants require the image_processing gem. Please add `gem "image_processing", "~> 1.2"` to your Gemfile or set `config.active_storage.variant_processor = :disabled`.
+Generating image variants require the image_processing gem. Please add `gem "image_processing", "~> 1.2"` to your Gemfile or set `config.active_storage.variant_processor = :disabled`.
+Generating image variants require the image_processing gem. Please add `gem "image_processing", "~> 1.2"` to your Gemfile or set `config.active_storage.variant_processor = :disabled`.
+Started GET "/api/v1/batches" for 127.0.0.1 at 2025-12-15 16:39:55 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='PharmaApi'*/[0m
+Processing by BatchesController#index as */*
+Completed 200 OK in 26ms (Views: 0.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 9.5ms)
+
+
