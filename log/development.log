@@ -120,3 +120,11 @@ FOREIGN KEY ("shipment_id")
   [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN /*application='PharmaApi'*/[0m
   [1m[36mShipment Create (1.6ms)[0m  [1m[32mINSERT INTO "shipments" ("tracking_number", "status", "driver_name", "current_temp", "created_at", "updated_at") VALUES ('SHIP001', NULL, NULL, NULL, '2025-12-15 05:54:52.682253', '2025-12-15 05:54:52.682253') RETURNING "id" /*application='PharmaApi'*/[0m
   [1m[36mTRANSACTION (56.2ms)[0m  [1m[35mCOMMIT /*application='PharmaApi'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN /*application='PharmaApi'*/[0m
+  [1m[36mShipment Create (1.4ms)[0m  [1m[32mINSERT INTO "shipments" ("tracking_number", "status", "driver_name", "current_temp", "created_at", "updated_at") VALUES ('SHIP001', 'in_transit', 'John Doe', 2.5, '2025-12-15 05:59:22.871849', '2025-12-15 05:59:22.871849') RETURNING "id" /*application='PharmaApi'*/[0m
+  [1m[36mTRANSACTION (42.7ms)[0m  [1m[35mCOMMIT /*application='PharmaApi'*/[0m
+  [1m[36mShipment Load (0.9ms)[0m  [1m[34mSELECT "shipments".* FROM "shipments" ORDER BY "shipments"."id" ASC LIMIT 1 /*application='PharmaApi'*/[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN /*application='PharmaApi'*/[0m
+  [1m[36mBatch Exists? (2.0ms)[0m  [1m[34mSELECT 1 AS one FROM "batches" WHERE "batches"."lot_number" = 'LOT123' LIMIT 1 /*application='PharmaApi'*/[0m
+  [1m[36mBatch Create (1.0ms)[0m  [1m[32mINSERT INTO "batches" ("lot_number", "expiry", "status", "shipment_id", "created_at", "updated_at") VALUES ('LOT123', '2026-01-14', 0, 1, '2025-12-15 05:59:22.968044', '2025-12-15 05:59:22.968044') RETURNING "id" /*application='PharmaApi'*/[0m
+  [1m[36mTRANSACTION (54.1ms)[0m  [1m[35mCOMMIT /*application='PharmaApi'*/[0m
