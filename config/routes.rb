@@ -5,6 +5,4 @@ Rails.application.routes.draw do
       resources :shipments
     end
   end
-  # ... rest of your existing routes
 end
-root "dashboard#index"

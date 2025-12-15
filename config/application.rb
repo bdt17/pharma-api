@@ -8,8 +8,11 @@ module PharmaApi
   class Application < Rails::Application
     config.load_defaults 8.1
     config.api_only = true
-    config.active_job.queue_adapter = :inline
+    
+    # Disable generators
+    config.generators.system_tests = nil
+    
+    config.time_zone = 'Mountain Time (US & Canada)'
+    config.active_record.default_timezone = :local
   end
 end
-
-config.api_only = false
