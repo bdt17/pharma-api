@@ -5,5 +5,5 @@ Rails.application.routes.draw do
       resources :shipments
     end
   end
-  # ... rest of routes
+  # ... rest of your existing routes
 end

@@ -4,7 +4,7 @@
      4	      before_action :set_batch, only: [:show, :update, :destroy]
      5	
      6	      def index
-     7	        @batches = Batch.all
+     7	        @batches = Batch.includes(:shipment).all
      8	        render json: @batches
      9	      end
     10	
@@ -43,11 +43,3 @@
     43	      def batch_params
     44	        params.require(:batch).permit(:lot_number, :expiry, :status, :shipment_id)
     45	      end
-    61	
-    62	def batch_params
-    63	  params.require(:batch).permit(:lot_number, :expiry, :shipment_id, :status)
-    64	end
-    65	
-    66	    end
-    67	  end
-    68	end

@@ -128,3 +128,54 @@ FOREIGN KEY ("shipment_id")
   [1m[36mBatch Exists? (2.0ms)[0m  [1m[34mSELECT 1 AS one FROM "batches" WHERE "batches"."lot_number" = 'LOT123' LIMIT 1 /*application='PharmaApi'*/[0m
   [1m[36mBatch Create (1.0ms)[0m  [1m[32mINSERT INTO "batches" ("lot_number", "expiry", "status", "shipment_id", "created_at", "updated_at") VALUES ('LOT123', '2026-01-14', 0, 1, '2025-12-15 05:59:22.968044', '2025-12-15 05:59:22.968044') RETURNING "id" /*application='PharmaApi'*/[0m
   [1m[36mTRANSACTION (54.1ms)[0m  [1m[35mCOMMIT /*application='PharmaApi'*/[0m
+Started GET "/api/v1/batches" for ::1 at 2025-12-15 14:46:34 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='PharmaApi'*/[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate
+
+You have 2 pending migrations:
+
+db/migrate/20251215053616_create_shipments.rb
+db/migrate/20251215053620_create_batches.rb
+
+
+):
+  
+activerecord (8.1.1) lib/active_record/migration.rb:743:in `check_pending_migrations'
+activerecord (8.1.1) lib/active_record/migration.rb:660:in `block (2 levels) in call'
+activesupport (8.1.1) lib/active_support/file_update_checker.rb:88:in `execute'
+activesupport (8.1.1) lib/active_support/file_update_checker.rb:98:in `execute_if_updated'
+activerecord (8.1.1) lib/active_record/migration.rb:667:in `block in call'
+activerecord (8.1.1) lib/active_record/migration.rb:657:in `synchronize'
+activerecord (8.1.1) lib/active_record/migration.rb:657:in `call'
+actionpack (8.1.1) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (8.1.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (8.1.1) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (8.1.1) lib/action_dispatch/middleware/executor.rb:20:in `call'
+actionpack (8.1.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (8.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+actionpack (8.1.1) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (8.1.1) lib/rails/rack/logger.rb:41:in `call_app'
+railties (8.1.1) lib/rails/rack/logger.rb:29:in `call'
+actionpack (8.1.1) lib/action_dispatch/middleware/remote_ip.rb:98:in `call'
+actionpack (8.1.1) lib/action_dispatch/middleware/request_id.rb:34:in `call'
+rack (3.2.4) lib/rack/runtime.rb:24:in `call'
+actionpack (8.1.1) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (8.1.1) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (8.1.1) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (8.1.1) lib/action_dispatch/middleware/executor.rb:20:in `call'
+actionpack (8.1.1) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.2.4) lib/rack/sendfile.rb:131:in `call'
+actionpack (8.1.1) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (8.1.1) lib/rails/engine.rb:534:in `call'
+puma (7.1.0) lib/puma/configuration.rb:300:in `call'
+puma (7.1.0) lib/puma/request.rb:101:in `block in handle_request'
+puma (7.1.0) lib/puma/thread_pool.rb:355:in `with_force_shutdown'
+puma (7.1.0) lib/puma/request.rb:100:in `handle_request'
+puma (7.1.0) lib/puma/server.rb:503:in `process_client'
+puma (7.1.0) lib/puma/server.rb:262:in `block in run'
+puma (7.1.0) lib/puma/thread_pool.rb:182:in `block in spawn_thread'
