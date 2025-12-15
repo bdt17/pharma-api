@@ -7,3 +7,4 @@ Rails.application.routes.draw do
   end
   # ... rest of your existing routes
 end
+root "dashboard#index"

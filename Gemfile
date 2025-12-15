@@ -50,3 +50,5 @@ group :development, :test do
 end
 gem "rack-cors"
 gem 'sqlite3', '~> 2.1'
+gem "tailwindcss-rails"
+gem "turbo-rails"
