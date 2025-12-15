@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  lot_number: MyString
+  expiry: 2025-12-14
+  status: 1
+  shipment: one
+
+two:
+  lot_number: MyString
+  expiry: 2025-12-14
+  status: 1
+  shipment: two

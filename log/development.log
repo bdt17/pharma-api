@@ -6,3 +6,30 @@ Processing by Api::ShipmentsController#index as */*
 Completed 200 OK in 21ms (Views: 0.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
 
 
+  [1m[35mSQL (0.7ms)[0m  [1m[35mSET search_path TO public /*application='PharmaApi'*/[0m
+  [1m[35m (1812.6ms)[0m  [1m[35mCREATE DATABASE "pharma_api_development" ENCODING = 'unicode' /*application='PharmaApi'*/[0m
+  [1m[35m (420.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY) /*application='PharmaApi'*/[0m
+  [1m[35m (298.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL) /*application='PharmaApi'*/[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5243051708884676505) /*application='PharmaApi'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='PharmaApi'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='PharmaApi'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Create (30.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2025-12-15 05:20:27.799969', '2025-12-15 05:20:27.799977') RETURNING "key" /*application='PharmaApi'*/[0m
+Migrating to CreateBatches (20251215052023)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN /*application='PharmaApi'*/[0m
+  [1m[35m (283.5ms)[0m  [1m[35mCREATE TABLE "batches" ("id" bigserial primary key, "lot_number" character varying, "expiry" date, "status" integer, "shipment_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_1acccfc229"
+FOREIGN KEY ("shipment_id")
+  REFERENCES "shipments" ("id")
+) /*application='PharmaApi'*/[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK /*application='PharmaApi'*/[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(5243051708884676505) /*application='PharmaApi'*/[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5243051708884676505) /*application='PharmaApi'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='PharmaApi'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='PharmaApi'*/[0m
+Migrating to CreateBatches (20251215052023)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN /*application='PharmaApi'*/[0m
+  [1m[35m (291.7ms)[0m  [1m[35mCREATE TABLE "batches" ("id" bigserial primary key, "lot_number" character varying, "expiry" date, "status" integer, "shipment_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_1acccfc229"
+FOREIGN KEY ("shipment_id")
+  REFERENCES "shipments" ("id")
+) /*application='PharmaApi'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK /*application='PharmaApi'*/[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(5243051708884676505) /*application='PharmaApi'*/[0m
