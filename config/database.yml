@@ -1,12 +1,18 @@
+# config/database.yml - Add this production section
 default: &default
-  adapter: sqlite3
+  adapter: postgresql
+  encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   timeout: 5000
 
 development:
   <<: *default
-  database: db/development.sqlite3
+  database: your_app_development
 
 test:
   <<: *default
-  database: ":memory:"
+  database: your_app_test
+
+production:
+  <<: *default
+  url: <%= ENV['DATABASE_URL'] %>
