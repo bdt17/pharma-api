@@ -11,3 +11,5 @@ module PharmaApi
     config.active_job.queue_adapter = :inline
   end
 end
+
+config.api_only = false
