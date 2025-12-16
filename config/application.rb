@@ -9,3 +9,5 @@ module PharmaApi
     config.api_only = true
   end
 end
+
+  config.api_only = true
