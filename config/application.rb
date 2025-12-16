@@ -1,6 +1,7 @@
 require_relative "boot"
 
 require "rails/all"
+
 Bundler.require(*Rails.groups)
 
 module PharmaApi
@@ -9,5 +10,3 @@ module PharmaApi
     config.api_only = true
   end
 end
-
-  config.api_only = true
